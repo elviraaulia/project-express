@@ -4,6 +4,7 @@
 import express, { Request, Response } from "express"
 import { validateCube } from "./middleware/validateCube"
 import routeBangunDatar from "./route/bangunDatar"
+import routeBangunRuang from "./route/bangunRuang"
 
 // buat wadah untuk inisiasi express
 const app=express()
@@ -86,6 +87,7 @@ app.post(`/balok`,validateCube,(request: Request, response: Response)=>{
 
 // reqister route of bangun datar
 app.use(routeBangunDatar)
+app.use(routeBangunRuang)
 
 // run server
 app.listen(PORT, () => {
